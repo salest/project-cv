@@ -11,7 +11,6 @@ class Navbar extends Component {
                 <h1>{this.props.fullName}</h1>
                 <ul className="navbar-list">
                     <li><a href="">Skills</a></li>
-                    <li><a href="">Portfolio</a></li>
                     <li><a href="">Experience</a></li>
                     <li><a href="" target="_blank">Resume</a></li>
                 </ul>
