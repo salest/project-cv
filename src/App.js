@@ -45,17 +45,14 @@ class App extends Component {
   handleExperienceChange = (index, e) => {
     const { name, value } = e.target;
     console.log(`${name}, ${value}`);
-    this.setState((prevState) => {
-      const list = prevState.experience.map((element, i) => {
-        let temp = Object.assign({}, element);
-        if (index === i) {
-          temp[name] = value;
-        }
-        return temp;
-      });
-      return { list, }
+    const list = this.state.experience.map((element, i) => {
+      let temp = Object.assign({}, element);
+      if (index === i) {
+        temp[name] = value;
+      }
+      return temp;
     });
-
+    this.setState({experience: list});
   }
 
   render() {
