@@ -53,6 +53,16 @@ li a {
     width: 50%;
 }
 
+.flex-section{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.big-input{
+    resize: none;
+}
+
 .main-content{
     padding-left: 200px;
 }
@@ -78,3 +88,12 @@ li a {
     gap: 10px;
 }
 
+.content-subheader{
+    margin-bottom: 8px;
+}
+
+.content-list{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}

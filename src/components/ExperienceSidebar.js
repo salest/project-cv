@@ -1,24 +1,28 @@
 import React, { Component } from "react";
 class ExperienceSidebar extends Component {
     render() {
-        const { title, experience, handleExperienceChange } = this.props;
+        const { titles, experience, handleExperienceChange } = this.props;
 
 
         const list = experience.map((element, index) => {
             const entries = Object.entries(element);
+            let titleIndex = 0;
             const jobInfo = entries.map((info) => {
                 return (
-                    <div id={`jobDiv-${index}-${info[0]}`} key={`jobDiv-${index}-${info[0]}`}>
-                        <label htmlFor={info[0]}>{info[0]}</label>
-                        <input name={info[0]} type="text" value={info[1]} onChange={(e) => handleExperienceChange(index, e)}></input>
+                    <div className="flex-section" id={`jobFormDiv-${index}-${info[0]}`} key={`jobFormDiv-${index}-${info[0]}`}>
+                        <label htmlFor={`${info[0]}-${index}`}>{titles[titleIndex++]}</label>
+                        {titleIndex !== 3 && <input name={`${info[0]}-${index}`} type="text" value={info[1]} onChange={(e) => handleExperienceChange(index, e)}></input>}
+                        {titleIndex === 3 && <textarea className="big-input" name={`${info[0]}-${index}`} value={info[1]} rows="5" cols="20"></textarea>}
                     </div>
                 );
             });
             return jobInfo;
         })
         return (
-            <div>
+            <div className="flex-section">
                 {list}
+                <br></br>
+                <hr className="section-line"></hr>
             </div>
         );
     }

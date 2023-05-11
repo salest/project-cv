@@ -19,7 +19,7 @@ class App extends Component {
       skills: 'JavaScript;React;HTML',
       experience: [
         {
-          jobName: 'Microsoft',
+          jobName: 'Support Engineer @ Microsoft',
           jobDate: 'July 2018- Aug 2019',
           responsibilities: '• Redesigned and developed a complex Excel data processing tool into a customizable web application that allowed users to create reports and improve billing accuracy for customers.' +
             '• Life-cycled an outdated, multi-paged tool that used Microsoft Access Database to a web application' +
@@ -44,7 +44,6 @@ class App extends Component {
 
   handleExperienceChange = (index, e) => {
     const { name, value } = e.target;
-    console.log(`${name}, ${value}`);
     const list = this.state.experience.map((element, i) => {
       let temp = Object.assign({}, element);
       if (index === i) {

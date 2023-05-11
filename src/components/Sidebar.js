@@ -49,7 +49,7 @@ class Sidebar extends Component {
                     value={skills}
                     onChange={onChange}></input>
                 <hr className="section-line"></hr>
-                <ExperienceSidebar title="Experience" experience={experience} handleExperienceChange={handleExperienceChange}/>
+                <ExperienceSidebar title="Experience" experience={experience} handleExperienceChange={handleExperienceChange} titles={["Role @ Company:", "Date:", "Work Feats: (Split by ;)"]}/>
                 
             </div>
         );
