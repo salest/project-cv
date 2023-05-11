@@ -11,7 +11,7 @@ class MultiSection extends Component {
                     <h3 className="content-subheader" key={`jobDate-${index}`}>{element["jobDate"]}</h3>
                     <h4>Responsibilities</h4>
                     <ul className="content-list">
-                        {element["responsibilities"].split('•').map((item, i) => <li key={`jobRes-${index}-${i}`} className="list-item">{item}</li>)}
+                        {element["responsibilities"].split(';').map((item, i) => <li key={`jobRes-${index}-${i}`} className="list-item">{item}</li>)}
                     </ul>
                 </div>
             ); 

@@ -19,15 +19,15 @@ class App extends Component {
       skills: 'JavaScript;React;HTML',
       experience: [
         {
-          jobName: 'Support Engineer @ Microsoft',
-          jobDate: 'July 2018- Aug 2019',
-          responsibilities: '• Redesigned and developed a complex Excel data processing tool into a customizable web application that allowed users to create reports and improve billing accuracy for customers.' +
-            '• Life-cycled an outdated, multi-paged tool that used Microsoft Access Database to a web application' +
-            'developed using a modern framework and SQL database to help document Easement record files state-wide.' +
-            '• Developed automation scripts to maintain information on geographical data of electric-affiliated' +
-            'technologies using Python and PowerShell.' +
-            '• Created and maintained RESTful API’s and SQL database maintenance.' +
-            '• Onboarded and Integrated Landis+Gyr’s Command Center Software System for all electric smart meters in Hawaii.'
+          jobName: 'Development Analyst @ Hawaiian Electric',
+          jobDate: 'Jan 2020- April 2023',
+          responsibilities: 'Redesigned and developed a complex Excel data processing tool into a customizable web application that allowed users to create reports and improve billing accuracy for customers.;' +
+            'Life-cycled an outdated, multi-paged tool that used Microsoft Access Database to a web application.;' +
+            'developed using a modern framework and SQL database to help document Easement record files state-wide.;' +
+            'Developed automation scripts to maintain information on geographical data of electric-affiliated.;' +
+            'technologies using Python and PowerShell.;' +
+            'Created and maintained RESTful API’s and SQL database maintenance.;' +
+            'Onboarded and Integrated Landis+Gyr’s Command Center Software System for all electric smart meters in Hawaii.;'
         }
       ]
     }
@@ -44,10 +44,11 @@ class App extends Component {
 
   handleExperienceChange = (index, e) => {
     const { name, value } = e.target;
+    const key = name.split('-')[0];
     const list = this.state.experience.map((element, i) => {
       let temp = Object.assign({}, element);
       if (index === i) {
-        temp[name] = value;
+        temp[key] = value;
       }
       return temp;
     });
