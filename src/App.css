@@ -1,14 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text&display=swap');
+
 :root{
     --light: #E7F6F2;
     --light-blue: #A5C9CA;
     --dark-blue: #395B64;
     --dark: #2C3333;
+    font-family: 'Wix Madefor Text', sans-serif;
 }
 
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+input{
+    font-family: 'Wix Madefor Text', sans-serif;
+}
+
+textarea{
+    font-family: 'Wix Madefor Text', sans-serif;
 }
 
 li{
@@ -24,6 +35,7 @@ li a {
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
+    background-color: var(--light);
 }
 
 .navbar-list{
@@ -69,7 +81,6 @@ li a {
 
 
 .section{
-    background-color: var(--light);
     padding: 20px 15px;
 }
 
