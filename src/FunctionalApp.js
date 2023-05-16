@@ -11,19 +11,25 @@ const App = () => {
         email: 'tevin.sales@gmail.com'
     });
 
+    let schoolIndex = 0;
     const [schoolState, setSchoolState] = useState([{
         schoolName: 'University of Hawaii',
         schoolDate: '2014-2017',
         schoolMajor: 'Computer Science',
+        schoolId: schoolIndex++,
     }]);
 
+    let skillIndex = 0;
     const [skillState, setSkillState] = useState([{
         skillTitle: 'Programming Languages',
-        skilllist: 'Javascript;React;HTML'
+        skillList: 'Javascript;React;HTML',
+        skillId: skillIndex++,
     }]);
 
+    let expIndex = 0;
     const [expState, setExpState] = useState([
         {
+            expId: expIndex++,
             jobName: 'Development Analyst @ Hawaiian Electric',
             jobDate: 'Jan 2020- April 2023',
             responsibilities: 'Redesigned and developed a complex Excel data processing tool into a customizable web application that allowed users to create reports and improve billing accuracy for customers.;' +
@@ -44,14 +50,64 @@ const App = () => {
         })
     }
 
+    const handleSchoolChange = (id, e) => {
+        const { name, value } = e.target;
+        const fieldName = name.split('-')[0];
+        setSchoolState(schoolState.map(s => {
+            if (s.schoolId === id) {
+                return {
+                    ...s,
+                    [fieldName]: value
+                }
+            } else {
+                return s;
+            }
+        }));
+    }
+
+    const handleSkillChange = (id, e) => {
+        const { name, value } = e.target;
+        const fieldName = name.split('-')[0];
+        setSkillState(skillState.map(s => {
+            if (s.skillId === id) {
+                return {
+                    ...s,
+                    [fieldName]: value
+                }
+            } else {
+                return s;
+            }
+        }));
+    }
+
+    const handleExpChange = (id, e) => {
+        const { name, value } = e.target;
+        const fieldName = name.split('-')[0];
+        setExpState(expState.map(s => {
+            if (s.expId === id) {
+                return {
+                    ...s,
+                    [fieldName]: value
+                }
+            } else {
+                return s;
+            }
+        }));
+    }
+
 
     return (
         <div>
-            <Navbar info={info}/>
-            <Sidebar 
-            info={info} 
-            handleInfoChange={handleInfoChange}
-            schoolState={schoolState}/>
+            <Navbar info={info} />
+            <Sidebar
+                info={info}
+                handleInfoChange={handleInfoChange}
+                handleSchoolChange={handleSchoolChange}
+                handleSkillChange={handleSkillChange}
+                handleExpChange={handleExpChange}
+                schoolState={schoolState}
+                expState={expState}
+                skillState={skillState} />
         </div>
     );
 }
