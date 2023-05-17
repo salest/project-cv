@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 
 import Navbar from './components/Navbar';
 import Sidebar from './components/FunctionalSidebar';
+import SchoolSection from './components/SchoolSection';
+import SkillSection from './components/SkillSection';
+import ExpSection from './components/ExpSection';
 
 const App = () => {
     const [info, setInfo] = useState({
@@ -108,6 +111,11 @@ const App = () => {
                 schoolState={schoolState}
                 expState={expState}
                 skillState={skillState} />
+            <div className='main-content'>
+                <SchoolSection schoolState={schoolState} />
+                <SkillSection skillState={skillState} />
+                <ExpSection expState={expState} />
+            </div>
         </div>
     );
 }
